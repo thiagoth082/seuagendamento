@@ -5,7 +5,7 @@ import './index.css'
 import { AuthProvider, useAuth } from './contexts/AuthContext'
 import Login from "./pages/admin/Login";
 import Dashboard from './pages/admin/Dashboard'
-
+import Servicos from './pages/admin/Servicos'
 function RotaProtegida({ children }) {
   const { usuario, carregando } = useAuth()
   if (carregando) return <div className="min-h-screen bg-slate-900" />
@@ -24,6 +24,15 @@ function App() {
             element={
               <RotaProtegida>
                 <Dashboard />
+              </RotaProtegida>
+            }
+            
+          />
+                    <Route
+            path="/admin/servicos"
+            element={
+              <RotaProtegida>
+                <Servicos />
               </RotaProtegida>
             }
           />

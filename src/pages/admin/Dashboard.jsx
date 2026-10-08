@@ -24,12 +24,17 @@ export default function Dashboard() {
     <div className="min-h-screen bg-slate-900 text-white p-8">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-emerald-400">{negocio.nome}</h1>
-        <button
-          onClick={logout}
-          className="text-sm text-slate-300 hover:text-white underline"
-        >
-          Sair
-        </button>
+        <div className="flex gap-4 items-center">
+          <a href="/admin/servicos" className="text-sm text-slate-300 hover:text-white underline">
+            Serviços
+          </a>
+          <button
+            onClick={logout}
+            className="text-sm text-slate-300 hover:text-white underline"
+          >
+            Sair
+          </button>
+        </div>
       </div>
       <p className="text-slate-400 text-sm mb-1">Logado como: {usuario?.email}</p>
       <p className="text-slate-400 text-sm mb-1">Papel: {negocio.papel}</p>
